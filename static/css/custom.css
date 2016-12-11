@@ -13,6 +13,7 @@ body {
 .nav-menu {
 	/*box-shadow: 0 1px 1px rgba(0,0,0, 0.10);*/
 	border-bottom: 1px solid #e3e3e3;
+	padding-botton: 1.25em;
 }
 
 .header {
@@ -112,7 +113,7 @@ body {
 	height: auto;
 	padding-left: 0;
 	display: block;
-	text-align: center;	
+	text-align: center;
 }
 
 #gototop-btn {
@@ -198,6 +199,12 @@ body {
 .pure-menu-active>.pure-menu-link, .pure-menu-link:hover, .pure-menu-link:focus {
     background-color: transparent !important;
 }
+
+.sep {
+    opacity: .7;
+}
+
+
 
 @media screen and (max-width:767px){
 	.desktop {
