@@ -19,6 +19,7 @@ body {
 	text-align: left;
 	color: #484848;
 	margin-bottom: .5em;
+	margin-top: 1.5em;
 }
 
 .header .desktop ul {
@@ -38,6 +39,7 @@ body {
 	font-weight: bold;
 	color: #e5e5e5;
 	font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: none !important;
 }
 
 .pull-right {
