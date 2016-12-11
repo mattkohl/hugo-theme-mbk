@@ -1,0 +1,11 @@
+name = "MBK"
+description = "MBK's hugo theme"
+license = "MIT"
+licenselink = "http://opensource.org/licenses/MIT"
+homepage = "https://github.com/mattkohl/hugo-theme-mbk"
+tags = ["blog", "personal"]
+min_version=0.1
+
+[author]
+    name = "Matt Kohl"
+    homepage = "http://mattkohl.com"
