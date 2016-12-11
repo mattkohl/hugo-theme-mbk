@@ -111,6 +111,8 @@ body {
 .footer-content ul {
 	height: auto;
 	padding-left: 0;
+	display: block;
+	text-align: center;	
 }
 
 #gototop-btn {
