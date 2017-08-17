@@ -1,11 +1,16 @@
-name = "MBK"
-description = "MBK's hugo theme"
+name = "Hugo-Theme-MBK"
 license = "MIT"
-licenselink = "http://opensource.org/licenses/MIT"
-homepage = "https://github.com/mattkohl/hugo-theme-mbk"
-tags = ["blog", "personal"]
-min_version=0.1
+licenselink = "https://github.com/mattkohl/hugo-theme-mbk/blob/master/LICENSE.md"
+description = "Hugo Theme based on Cocoa Enhanced by Alexis Tacnet"
+homepage = "https://github.com/mattkohl/hugo-theme-mbk/"
+tags = ["clean", "fast", "responsive", "typography"]
+features = ["flexible", "fast", "highlights", "progressive images", "disqus"]
+min_version = 0.0.1
 
 [author]
     name = "Matt Kohl"
-    homepage = "http://mattkohl.com"
+    homepage = "https://github.com/mattkohl"
+
+[original]
+    name = "Alexis Tacnet"
+    homepage = "https://github.com/fuegowolf"
