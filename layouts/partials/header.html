@@ -1,36 +1,38 @@
-<html lang="en">
-<head>
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
 
-  <!-- Basic Page Needs –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta charset="utf-8">
-  <title>{{ .Title }}</title>
-  <meta name="description" content="{{ .Title }}">
-  <meta name="author" content="{{ .Site.Author.name }}">
+{{ partial "head.html" . }}
 
-  <!-- Mobile Specific Metas –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- FONT –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-  <!-- CSS –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/pure-min.css">
-  <!--[if lte IE 8]>
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-old-ie-min.css">
-<![endif]-->
-<!--[if gt IE 8]><!-->
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.0/grids-responsive-min.css">
-<!--<![endif]-->
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}css/custom.css">
-
-  <!--- highlight js -->
-  {{ if .Site.Params.highlight }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}highlight/styles/{{ .Site.Params.highlight }}.css">
-  {{ else }}
-  <link rel="stylesheet" href="{{ .Site.BaseURL }}highlight/styles/default.css">
-  {{ end }}
-  <script src="{{ .Site.BaseURL }}highlight/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-
-</head>
 <body>
+
+{{ if .IsPage }}
+<section class="header">
+{{ else }}
+<section class="header header-home">
+{{ end }}
+    <div class="container">
+        <a href="{{ .Site.BaseURL }}"><img class="logo" src="{{ .Site.Params.logofile | absURL }}" alt="logo" /></a>
+        <div class="content">
+            <a href="{{ .Site.BaseURL }}"><div class="name"><h1>{{ .Site.Title }}</h1></div></a>
+            <nav>
+                <ul>
+                    {{ if ne (len (where .Site.RegularPages "Section" "blog")) 0 }}
+                        <a href="{{ .Site.BaseURL }}blog/"><li>Blog</li></a>
+                    {{ end }}
+                    {{ range $.Site.Home.Sections }}
+                        {{ range first 1 (where .Pages "Section" "ne" "")}}
+                            {{ if ne .Section "blog"}}
+                            <a href="{{ .Section | urlize | absURL }}"><li>{{ .Section }}</li></a>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                    {{ range where .Site.RegularPages "Section" ""}}
+                        {{ if and (ne .Title "License") (ne .Title "Home")}}
+                            <a href="{{ .Permalink }}"><li>{{ .Title }}</li></a>
+                        {{ end }}
+                    {{ end }}
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
